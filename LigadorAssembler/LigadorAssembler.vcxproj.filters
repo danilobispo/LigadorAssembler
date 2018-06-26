@@ -24,12 +24,21 @@
     <ClCompile Include="ParseLib.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Ligador.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TabelaLib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ParseLib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ligador.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LigadorAssembler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

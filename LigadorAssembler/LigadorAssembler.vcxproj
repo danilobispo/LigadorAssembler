@@ -149,11 +149,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Ligador.cpp" />
     <ClCompile Include="LigadorAssembler.cpp" />
     <ClCompile Include="ParseLib.cpp" />
     <ClCompile Include="TabelaLib.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Ligador.h" />
+    <ClInclude Include="LigadorAssembler.h" />
     <ClInclude Include="ParseLib.h" />
     <ClInclude Include="TabelaLib.h" />
   </ItemGroup>
