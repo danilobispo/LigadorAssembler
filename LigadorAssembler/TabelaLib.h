@@ -48,6 +48,10 @@ public:
 
 	std::map<std::string, InfoDeDefinicao> gerarTabelaGlobalDeDefinicoes(std::map<std::string, InfoDeDefinicao> tabela1, std::map<std::string, InfoDeDefinicao> tabela2);
 
+	std::map<std::string, InfoDeDefinicao> gerarTabelaGlobalDeDefinicoes(std::map<std::string, InfoDeDefinicao> tabela1, std::map<std::string, InfoDeDefinicao> tabela2, std::map<std::string, InfoDeDefinicao> tabela3, std::map<std::string, InfoDeDefinicao> tabela4);
+
+	std::map<std::string, InfoDeDefinicao> gerarTabelaGlobalDeDefinicoes(std::map<std::string, InfoDeDefinicao> tabela1, std::map<std::string, InfoDeDefinicao> tabela2, std::map<std::string, InfoDeDefinicao> tabela3);
+
 	//Tabela de definições
 	void insereSimboloNaTabelaDeDefinicoes(std::string, InfoDeDefinicao, std::map<std::string, InfoDeDefinicao>);
 	/*bool rotuloJaExistenteNaTabelaDeDefinicoes(std::string rotulo);

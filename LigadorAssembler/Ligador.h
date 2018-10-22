@@ -13,5 +13,9 @@ public:
 	std::vector<int> alinharMapasDeBits(std::vector<int> codigo1, std::vector<int> codigo2);
 	std::vector<int> fazerCorrecaoDeEnderecosNoCodigoFonte(std::vector<int> codigoFonteFinal, std::vector<int> mapaDeBitsFinal, std::map<std::string, InfoDeDefinicao> tabelaGlobalDeDefinicoes, std::map<std::string, InfoDeUso> tabelaDeUsoPrimeiroArquivo, std::map<std::string, InfoDeUso> tabelaDeUsoSegundoArquivo);
 
+	std::vector<int> fazerCorrecaoDeEnderecosNoCodigoFonte(std::vector<int> codigoFonteFinal, std::vector<int> mapaDeBitsFinal, std::map<std::string, InfoDeDefinicao> tabelaGlobalDeDefinicoes, std::map<std::string, InfoDeUso> tabelaDeUsoPrimeiroArquivo, std::map<std::string, InfoDeUso> tabelaDeUsoSegundoArquivo, std::map<std::string, InfoDeUso> tabelaDeUsoTerceiroArquivo);
+
+	std::vector<int> fazerCorrecaoDeEnderecosNoCodigoFonte(std::vector<int> codigoFonteFinal, std::vector<int> mapaDeBitsFinal, std::map<std::string, InfoDeDefinicao> tabelaGlobalDeDefinicoes, std::map<std::string, InfoDeUso> tabelaDeUsoPrimeiroArquivo, std::map<std::string, InfoDeUso> tabelaDeUsoSegundoArquivo, std::map<std::string, InfoDeUso> tabelaDeUsoTerceiroArquivo, std::map<std::string, InfoDeUso> tabelaDeUsoQuartoArquivo);
+
 };
 

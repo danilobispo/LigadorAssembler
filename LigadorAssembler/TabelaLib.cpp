@@ -39,3 +39,35 @@ std::map<std::string, InfoDeDefinicao> TabelaLib::gerarTabelaGlobalDeDefinicoes(
 
 	return tabelaGlobalDeDefinicoes;
 }
+
+std::map<std::string, InfoDeDefinicao> TabelaLib::gerarTabelaGlobalDeDefinicoes(std::map<std::string, InfoDeDefinicao> tabela1, std::map<std::string, 
+	InfoDeDefinicao> tabela2, 
+	std::map<std::string, InfoDeDefinicao> tabela3,
+	std::map<std::string, InfoDeDefinicao> tabela4) {
+	std::map<std::string, InfoDeDefinicao> tabelaGlobalDeDefinicoes = tabela1;
+	tabelaGlobalDeDefinicoes.insert(tabela2.begin(), tabela2.end());
+	tabelaGlobalDeDefinicoes.insert(tabela3.begin(), tabela3.end());
+	tabelaGlobalDeDefinicoes.insert(tabela4.begin(), tabela4.end());
+	for (auto& itemDef : tabelaGlobalDeDefinicoes) {
+		std::cout << "Simbolo TGD: " << itemDef.first << std::endl;
+		std::cout << "Valor TGD: " << itemDef.second.valor << std::endl;
+
+	}
+
+	return tabelaGlobalDeDefinicoes;
+}
+
+std::map<std::string, InfoDeDefinicao> TabelaLib::gerarTabelaGlobalDeDefinicoes(std::map<std::string, InfoDeDefinicao> tabela1, std::map<std::string,
+	InfoDeDefinicao> tabela2,
+	std::map<std::string, InfoDeDefinicao> tabela3) {
+	std::map<std::string, InfoDeDefinicao> tabelaGlobalDeDefinicoes = tabela1;
+	tabelaGlobalDeDefinicoes.insert(tabela2.begin(), tabela2.end());
+	tabelaGlobalDeDefinicoes.insert(tabela3.begin(), tabela3.end());
+	for (auto& itemDef : tabelaGlobalDeDefinicoes) {
+		std::cout << "Simbolo TGD: " << itemDef.first << std::endl;
+		std::cout << "Valor TGD: " << itemDef.second.valor << std::endl;
+
+	}
+
+	return tabelaGlobalDeDefinicoes;
+}

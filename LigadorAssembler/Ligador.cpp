@@ -79,10 +79,104 @@ std::vector<int> Ligador::fazerCorrecaoDeEnderecosNoCodigoFonte(
 					if (valorTab == i) {
 						std::string nomeVariavel = itemTabelaDeUso.first;
 						codigoFonteFinal[i] += tabelaGlobalDeDefinicoes.at(nomeVariavel).valor; //Soma com o valor final
+						std::cout << "";
 					}
 				}
 			}
 			for (auto& itemTabelaDeUso : tabelaDeUsoSegundoArquivo) {
+				for (auto& valorTab : itemTabelaDeUso.second.valorList) { // Ou se foi na segunda tabela de uso
+					if (valorTab == i) {
+						std::string nomeVariavel = itemTabelaDeUso.first;
+						codigoFonteFinal[i] += tabelaGlobalDeDefinicoes.at(nomeVariavel).valor; // Soma com o valor do local
+						std::cout << "";
+					}
+				}
+			}
+		}
+	}
+	return codigoFonteFinal;
+}
+
+
+std::vector<int> Ligador::fazerCorrecaoDeEnderecosNoCodigoFonte(
+	std::vector<int> codigoFonteFinal,
+	std::vector<int> mapaDeBitsFinal,
+	std::map<std::string, InfoDeDefinicao> tabelaGlobalDeDefinicoes,
+	std::map<std::string, InfoDeUso> tabelaDeUsoPrimeiroArquivo,
+	std::map<std::string, InfoDeUso> tabelaDeUsoSegundoArquivo,
+	std::map<std::string, InfoDeUso> tabelaDeUsoTerceiroArquivo) {
+	std::cout << "Size codigo fonte: " << codigoFonteFinal.size() << std::endl;
+	std::cout << "Size mapa de bits: " << mapaDeBitsFinal.size() << std::endl;
+
+	for (int i = 0; i < mapaDeBitsFinal.size(); i++) {
+		if (mapaDeBitsFinal[i] == 1) { // Se a posição do mapa de bits tiver 1, significa que o programa precisa resolver um endereço realocado
+			for (auto& itemTabelaDeUso : tabelaDeUsoPrimeiroArquivo) { // Busca utilização na primeira tabela de uso
+				for (auto& valorTab : itemTabelaDeUso.second.valorList) {
+					if (valorTab == i) {
+						std::string nomeVariavel = itemTabelaDeUso.first;
+						codigoFonteFinal[i] += tabelaGlobalDeDefinicoes.at(nomeVariavel).valor; //Soma com o valor final
+					}
+				}
+			}
+			for (auto& itemTabelaDeUso : tabelaDeUsoSegundoArquivo) {
+				for (auto& valorTab : itemTabelaDeUso.second.valorList) { // Ou se foi na segunda tabela de uso
+					if (valorTab == i) {
+						std::string nomeVariavel = itemTabelaDeUso.first;
+						codigoFonteFinal[i] += tabelaGlobalDeDefinicoes.at(nomeVariavel).valor; // Soma com o valor do local
+					}
+				}
+			}
+			for (auto& itemTabelaDeUso : tabelaDeUsoTerceiroArquivo) {
+				for (auto& valorTab : itemTabelaDeUso.second.valorList) { // Ou se foi na segunda tabela de uso
+					if (valorTab == i) {
+						std::string nomeVariavel = itemTabelaDeUso.first;
+						codigoFonteFinal[i] += tabelaGlobalDeDefinicoes.at(nomeVariavel).valor; // Soma com o valor do local
+					}
+				}
+			}
+		}
+	}
+	return codigoFonteFinal;
+}
+
+std::vector<int> Ligador::fazerCorrecaoDeEnderecosNoCodigoFonte(
+	std::vector<int> codigoFonteFinal,
+	std::vector<int> mapaDeBitsFinal,
+	std::map<std::string, InfoDeDefinicao> tabelaGlobalDeDefinicoes,
+	std::map<std::string, InfoDeUso> tabelaDeUsoPrimeiroArquivo,
+	std::map<std::string, InfoDeUso> tabelaDeUsoSegundoArquivo,
+	std::map<std::string, InfoDeUso> tabelaDeUsoTerceiroArquivo,
+	std::map<std::string, InfoDeUso> tabelaDeUsoQuartoArquivo) {
+	std::cout << "Size codigo fonte: " << codigoFonteFinal.size() << std::endl;
+	std::cout << "Size mapa de bits: " << mapaDeBitsFinal.size() << std::endl;
+
+	for (int i = 0; i < mapaDeBitsFinal.size(); i++) {
+		if (mapaDeBitsFinal[i] == 1) { // Se a posição do mapa de bits tiver 1, significa que o programa precisa resolver um endereço realocado
+			for (auto& itemTabelaDeUso : tabelaDeUsoPrimeiroArquivo) { // Busca utilização na primeira tabela de uso
+				for (auto& valorTab : itemTabelaDeUso.second.valorList) {
+					if (valorTab == i) {
+						std::string nomeVariavel = itemTabelaDeUso.first;
+						codigoFonteFinal[i] += tabelaGlobalDeDefinicoes.at(nomeVariavel).valor; //Soma com o valor final
+					}
+				}
+			}
+			for (auto& itemTabelaDeUso : tabelaDeUsoSegundoArquivo) {
+				for (auto& valorTab : itemTabelaDeUso.second.valorList) { // Ou se foi na segunda tabela de uso
+					if (valorTab == i) {
+						std::string nomeVariavel = itemTabelaDeUso.first;
+						codigoFonteFinal[i] += tabelaGlobalDeDefinicoes.at(nomeVariavel).valor; // Soma com o valor do local
+					}
+				}
+			}
+			for (auto& itemTabelaDeUso : tabelaDeUsoTerceiroArquivo) {
+				for (auto& valorTab : itemTabelaDeUso.second.valorList) { // Ou se foi na segunda tabela de uso
+					if (valorTab == i) {
+						std::string nomeVariavel = itemTabelaDeUso.first;
+						codigoFonteFinal[i] += tabelaGlobalDeDefinicoes.at(nomeVariavel).valor; // Soma com o valor do local
+					}
+				}
+			}
+			for (auto& itemTabelaDeUso : tabelaDeUsoQuartoArquivo) {
 				for (auto& valorTab : itemTabelaDeUso.second.valorList) { // Ou se foi na segunda tabela de uso
 					if (valorTab == i) {
 						std::string nomeVariavel = itemTabelaDeUso.first;

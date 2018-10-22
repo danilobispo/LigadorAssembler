@@ -20,18 +20,18 @@ std::vector<std::string> ParseLib::parseArquivo(std::string conteudoArquivo)
 std::vector<int> ParseLib::parseCodigoFonte(std::vector<std::string> conteudoArquivo)
 {
 	std::string linhaCodigo;
-	for (auto& linhasArquivo : conteudoArquivo) {
-		if (linhasArquivo[0] == 'C') {
-			linhaCodigo = linhasArquivo;
+	for (int i = 0; i < conteudoArquivo.size(); i++) {
+		for (int j = 0; j < conteudoArquivo.size(); j++) {
+			if (conteudoArquivo[i].find("CODE") != std::string::npos) {
+				linhaCodigo = conteudoArquivo[i+1];
+			}
 		}
 	}
 
-	linhaCodigo.erase(0, 2);
 	std::vector<int> vetorCodigo;
 	std::stringstream stream(linhaCodigo);
 	int n; 
 	while (stream >> n) { 
-		std::cout << "Found integer: " << n << "\n"; 
 		vetorCodigo.push_back(n);
 	}
 	std::cout << std::endl;
@@ -151,7 +151,7 @@ int ParseLib::criarFatorDeCorrecao(std::vector<std::string> linhasDoCodigo)
 	tamanhoCodigo = converteStringParaInt(sizeOfCode);
 	// DEBUG
 	//std::cout << "Tamanho do codigo: " << tamanhoCodigo << std::endl;
-	return tamanhoCodigo+1;
+	return tamanhoCodigo;
 }
 
 std::vector<std::string> ParseLib::separaEmLinhas(std::string fileString) {
