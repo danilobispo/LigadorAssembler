@@ -25,6 +25,9 @@ std::vector<int> ParseLib::parseCodigoFonte(std::vector<std::string> conteudoArq
 			if (conteudoArquivo[i].find("CODE") != std::string::npos) {
 				linhaCodigo = conteudoArquivo[i+1];
 			}
+			else {
+				linhaCodigo = conteudoArquivo[i];
+			}
 		}
 	}
 
